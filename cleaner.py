@@ -12,7 +12,6 @@ pdf = [".pdf"]
 installers = [".dmg", ".iso", ".zip"]
 code = [".py", ".mg"]
 data = [".exe", ".csv",".pptx"]
-# print(downloads_list)
 
 #test moving a documnet
 # shutil.move("/Users/nathans/Downloads/katho.jpg", "/Users/nathans/Documents/Downloads_Cleanup/photos/")
@@ -24,27 +23,23 @@ for file in downloads_list:
         if file[-length] == ".":
             file_type = file[-length:]
             break
-    print(file_type)
-
-
-    # try:                #if else structure to move files
-    #     if file in photos:
-    #         shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/photos/" + file)
-    #     elif file in printer:
-    #         shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/printer/" + file)
-    #     elif file in pdf:
-    #         shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/pdf/" + file)
-    #     elif file in installers:
-    #         shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/installers/" + file)
-    #     elif file in code:
-    #         shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/code/" + file)
-    #     elif file in data:
-    #         shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/data/" + file)
-    # except:
-    #     shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/other/" + file)
-    # if os.path.isfile(file):
-    #     print(file)
-  
+    # print(file_type)
+        
+    try:                #if else structure to move files
+        if file_type in photos:
+            shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/photos/" + file)
+        elif file_type in printer:
+            shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/printer/" + file)
+        elif file_type in pdf:
+            shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/pdf/" + file)
+        elif file_type in installers:
+            shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/installers/" + file)
+        elif file_type in code:
+            shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/code/" + file)
+        elif file_type in data:
+            shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/data/" + file)
+    except:
+        shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/other/" + file)
 
 
 
