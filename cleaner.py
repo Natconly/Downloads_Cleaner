@@ -9,7 +9,7 @@ downloads_list = os.listdir(path)
 photos = [".png", ".jpg", ".jpeg", ".heic"]
 printer = [".stl", "obj.", ".3mf"]
 pdf = [".pdf"]
-installers = [".dmg", ".iso"]
+installers = [".dmg", ".iso", ".zip"]
 code = [".py", ".mg"]
 data = [".exe", ".csv",".pptx"]
 # print(downloads_list)
@@ -18,17 +18,14 @@ data = [".exe", ".csv",".pptx"]
 # shutil.move("/Users/nathans/Downloads/katho.jpg", "/Users/nathans/Documents/Downloads_Cleanup/photos/")
 
 # Loop through each file and determine a "type", ie photo, pdf, misc
-for file in downloads_list: 
-    file3 = file[-3:]
-    file4 = file[-4:]
-    file5 = file[-5:]
-    print (file3, file4)
-    if "." ==file3[:1]:
-        file_type = file3
-    elif"." ==file4[:1]:
-        file_type = file4
-    elif"." ==file5[:1]:
-        file_type = file5
+for file in downloads_list:
+    file_type = None
+    for length in range(3, 6):
+        if file[-length] == ".":
+            file_type = file[-length:]
+            break
+    print(file_type)
+
 
     # try:                #if else structure to move files
     #     if file in photos:
