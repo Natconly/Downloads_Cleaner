@@ -2,7 +2,7 @@
 import os, shutil
 
 # Need to have the code access the downloads folder
-path = os.chdir('../Downloads')
+path = "/Users/nathans/Downloads/"
 downloads_list = os.listdir(path)
 
 #list of file types and destination folders
