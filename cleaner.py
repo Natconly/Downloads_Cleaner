@@ -25,20 +25,20 @@ for file in downloads_list:
             break
     # print(file_type)
         
-    try:                #if else structure to move files
-        if file_type in photos:
-            shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/photos/" + file)
-        elif file_type in printer:
-            shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/printer/" + file)
-        elif file_type in pdf:
-            shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/pdf/" + file)
-        elif file_type in installers:
-            shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/installers/" + file)
-        elif file_type in code:
-            shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/code/" + file)
-        elif file_type in data:
-            shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/data/" + file)
-    except:
+                   #if else structure to move files
+    if file_type in photos:
+        shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/photos/" + file)
+    elif file_type in printer:
+        shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/printer/" + file)
+    elif file_type in pdf:
+        shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/pdf/" + file)
+    elif file_type in installers:
+        shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/installers/" + file)
+    elif file_type in code:
+        shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/code/" + file)
+    elif file_type in data:
+        shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/data/" + file)
+    else:
         shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/other/" + file)
 
 
