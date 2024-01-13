@@ -41,7 +41,7 @@ for file in downloads_list:
     else:
         shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/other/" + file)
 
-
+print("Finished! All files successfully moved.\n")
 
 """ *******  Notes *******
 os.path.exists() - verifys that a file/directory location actually exists
