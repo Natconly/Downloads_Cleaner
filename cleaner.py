@@ -1,5 +1,8 @@
 #Automation to sort downloads folder into relevent folders
-import os, shutil
+import os, shutil, time
+
+#start the time function to track duration
+start = time.time()
 
 # Need to have the code access the downloads folder
 path = "/Users/nathans/Downloads/"
@@ -41,7 +44,8 @@ for file in downloads_list:
     else:
         shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/other/" + file)
 
-print("Finished! All files successfully moved.\n")
+end = time.time()
+print("Finished! All files successfully moved.\n Execution time of the program is", end - start)
 
 """ *******  Notes *******
 os.path.exists() - verifys that a file/directory location actually exists
