@@ -45,7 +45,7 @@ for file in downloads_list:
         shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/other/" + file)
 
 end = time.time()
-print("Finished! All files successfully moved.\n Execution time of the program is", end - start)
+print("\nFinished! All files successfully moved.\nExecution time of the program is", end - start, "\n")
 
 """ *******  Notes *******
 os.path.exists() - verifys that a file/directory location actually exists
