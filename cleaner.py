@@ -21,9 +21,26 @@ code = [".py", ".mg"]
 code_count = 0
 data = [".exe", ".csv",".pptx"]
 data_count = 0
+other_count = 0
 
 #test moving a documnet
 # shutil.move("/Users/nathans/Downloads/katho.jpg", "/Users/nathans/Documents/Downloads_Cleanup/photos/")
+
+# Check that destination locations exist, if not, create them.
+if os.path.exists("/Users/nathans/Documents/Downloads_Cleanup/photos/") == False:
+    os.makedirs("/Users/nathans/Documents/Downloads_Cleanup/photos/")
+if os.path.exists("/Users/nathans/Documents/Downloads_Cleanup/printer/") == False:
+    os.mkdir("/Users/nathans/Documents/Downloads_Cleanup/printer/")
+if os.path.exists("/Users/nathans/Documents/Downloads_Cleanup/pdf/") == False:
+    os.mkdir("/Users/nathans/Documents/Downloads_Cleanup/pdf/")
+if os.path.exists("/Users/nathans/Documents/Downloads_Cleanup/installers/") == False:
+    os.mkdir("/Users/nathans/Documents/Downloads_Cleanup/installers/")
+if os.path.exists("/Users/nathans/Documents/Downloads_Cleanup/code/") == False:
+    os.mkdir("/Users/nathans/Documents/Downloads_Cleanup/code/")
+if os.path.exists("/Users/nathans/Documents/Downloads_Cleanup/data/") == False:
+    os.mkdir("/Users/nathans/Documents/Downloads_Cleanup/data/")
+if os.path.exists("/Users/nathans/Documents/Downloads_Cleanup/other/") == False:
+    os.mkdir("/Users/nathans/Documents/Downloads_Cleanup/other/")
 
 # Loop through each file and determine a "type", ie photo, pdf, misc
 for file in downloads_list:
@@ -55,9 +72,10 @@ for file in downloads_list:
         data_count += 1
     else:
         shutil.move(path + file, "/Users/nathans/Documents/Downloads_Cleanup/other/" + file)
+        other_count += 1
 
 end = time.time()
-print("\nFinished! All files successfully moved.\nExecution time of the program is", end - start, "\n",photo_count," Photo files moved\n", printer_count," Print files moved\n", pdf_count," PDF files moved\n", installer_count," Installation files moved\n", code_count," Code files moved\n", data_count," Data files moved\n")
+print("\nFinished! All files successfully moved.\nExecution time of the program is", end - start, "\n",photo_count," Photo files moved\n", printer_count," Print files moved\n", pdf_count," PDF files moved\n", installer_count," Installation files moved\n", code_count," Code files moved\n", data_count," Data files moved\n", other_count," Other files moved")
 
 """ *******  Notes *******
 os.path.exists() - verifys that a file/directory location actually exists
